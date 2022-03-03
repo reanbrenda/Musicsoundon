@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "soundon-c96fa",
+    "staging": "soundon-c96fa"
+  },
+  "targets": {}
+}

@@ -1,0 +1,15 @@
+{
+    "name": "soundon",
+    "source": "src/index.html",
+    "scripts": {
+        "start": "parcel public/index.html",
+        "build": "parcel build"
+    },
+    "devDependencies": {
+        "parcel": "^2.3.2"
+    },
+    "dependencies": {
+        "botstrap": "^0.20.1",
+        "firebase": "^9.6.7"
+    }
+}
