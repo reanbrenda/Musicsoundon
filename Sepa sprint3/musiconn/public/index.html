@@ -38,9 +38,35 @@
                   <a class="nav-link" href="#">Library</a>
                 </li>
               
-                <li class="nav-item">
-                  <a class="nav-link" href="#"> Upload</a>
+                <li>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Upload
+                </button>
                 </li>
+                <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">add tune</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Upload audio</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            
               <li><button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">
                 Login/Signup
                 </button></li>
