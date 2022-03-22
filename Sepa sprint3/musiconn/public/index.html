@@ -11,9 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <script src = "form.js"></script
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <link rel="stylesheet" type="text/css" href="main.css" />
     
@@ -35,7 +32,7 @@
                   <a class="nav-link" href="exporemusic.html">Explore Music</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Library</a>
+                  <a class="nav-link" href="login.html">Library</a>
                 </li>
               
                 <li>
@@ -104,7 +101,7 @@
                       Login with Facebook
                     </button>
                     
-                    <button class="loginBtn loginBtn--google">
+                    <button class="loginBtn loginBtn--google"  id="signInWithGoogle">
                       Login with Google
                     </button>
                 </form>
@@ -119,17 +116,14 @@
                   </div>
                 <form class="pt-3">
                   <div class="mb-2">
-                    <label class="form-label">Username</label>
-                    <input type="text" class="form-control"  class="form-input" id="username">
+                    <label class="form-label">Fullname</label>
+                    <input type="text" class="form-control"  class="form-input" id="fullname">
                   </div>
                   <div class="mb-2">
                     <label class="form-label">Password</label>
                     <input type="password" class="form-control"  class="form-input" id="password">
                   </div>
-                  <div class="mb-2">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control"  class="form-input" id="password">
-                  </div>
+    
                   <div class="mb-2">
                     <label class="form-label">Email</label>
                     <input type="email" class="form-control" placeholder="Email" class="form-input" id="email">
@@ -142,7 +136,7 @@
                     <input type="checkbox" class="form-check-input">
                     <label class="form-check-label">Check me out</label>
                     <div id="button_container">
-                      <button onclick="Signup()">Signup</button>
+                      <button onclick="register()">Signup</button>
                     </div>
                 <div class="text-center pt-2">
                   <a href="#" class="btn text-primary" onclick="loginform()">Login Now !</a>
@@ -197,7 +191,12 @@
   </div>  
  
   </div>
-  </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
 
-   
+<script src= "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
+
+</script>
+
  </body>
