@@ -7,13 +7,18 @@ from eshop.models import Product,Collection
 from .serializers import ProductSerializers
 
 
-@api_view()
+@api_view(['GET','POST'])
 def product_list(request):
-    queryset=Product.objects.select_related('collection').all()
-    serializer=ProductSerializers(queryset,many=True)
-    return Response(serializer.data)
-
-
+    if request.method=='GET':
+        queryset=Product.objects.select_related('collection').all()
+        serializer=ProductSerializers(queryset,many=True)
+        return Response(serializer.data)
+    elif request.method=='POST':
+        serializer=ProductSerializers(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data,status=status.HTTP_201_CREATED)
+        
 
 
 @api_view()
@@ -21,4 +26,5 @@ def product_detail(request,id):
      product=get_object_or_404(Product,pk=id)
      serializer=ProductSerializers(product)
      return Response(serializer.data)
+   
  
