@@ -37,6 +37,10 @@ def product_detail(request,id):
              return Response({"error":'Product cannot be deleted because it is associated with an order item.'},status=status.HTTP_405_METHOD_NOT_ALLOWED)
          product.delete()
          return Response(status=status.HTTP_204_NO_CONTENT)
-     
-   
+@api_view(['GET','POST'])  
+def collectionlist(request):
+    if request.method=="GET":
+        queryset=Product.objects.all()
+        serializer=ProductSerializers(queryset)
+
  
