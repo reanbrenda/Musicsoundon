@@ -5,6 +5,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from eshop.models import Product,Collection
 from .serializers import ProductSerializers
+from .serializers import CollectionSerializers
+
+
 
 
 @api_view(['GET','POST'])
@@ -40,7 +43,25 @@ def product_detail(request,id):
 @api_view(['GET','POST'])  
 def collectionlist(request):
     if request.method=="GET":
-        queryset=Product.objects.all()
-        serializer=ProductSerializers(queryset)
+        queryset=Collection.objects.annotate()
+        serializer=CollectionSerializers(queryset)
+        return Response(serializer.data)
+    elif request.method=="POST":
+        serializer=CollectionSerializers(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data,status=status.HTTP_201_CREATED)
+@api_view(['GET','PUT','DELETE'])
+def  collection_detail(request,id):
+  if request.method=="GET":
+      queryset=collection.objects.annotate()
+      serializer=CollectionSerializers(queryset)
+      return Response(serializer.data)
+  elif request.method=="PUT":
+      serializer=CollectionSerializers(Collection,queryset)
+      serializer.is_valid(raise_exception=True)
+      serializer.save()
+      return Response(serializer.data)
+
 
  
