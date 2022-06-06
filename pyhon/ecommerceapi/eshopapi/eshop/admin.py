@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.contrib import admin, messages
 from django.db.models.aggregates import Count
 from django.db.models.query import QuerySet
@@ -73,7 +72,7 @@ class CollectionAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(
-            products_count=Count('product')
+            products_count=Count('products')
         )
 
 
@@ -114,4 +113,5 @@ class OrderAdmin(admin.ModelAdmin):
     autocomplete_fields = ['customer']
     inlines = [OrderItemInline]
     list_display = ['id', 'placed_at', 'customer']
+
 

@@ -3,8 +3,11 @@ from decimal import Decimal
 from eshop.models import Product,Collection
 class CollectionSerializers(serializers.ModelSerializer):
     class Meta:
-        model=Collection
-        fields=['id','title']
+        model = Collection
+        fields = ['id', 'title', 'products_count']
+
+    products_count = serializers.IntegerField()
+
 
 class ProductSerializers(serializers.ModelSerializer):
     class Meta:
